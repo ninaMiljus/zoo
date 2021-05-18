@@ -20,9 +20,7 @@
       <div class="form-group">
         <label for="sector.name" class="form-control">Sector:</label>
         <select name="sector.name">
-            <option value="vodene">Vodene</option>
-            <option value="kopno">Kopno</option>
-            <option value="ptice">Ptice</option>
+            <option v-for="(sector, index) in sectors" :key="index">{{sector.name}}</option>
         </select>
       </div>
       <button class="btn btn-primary">Add Animal</button>
