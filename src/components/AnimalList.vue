@@ -17,6 +17,7 @@
           <td>{{ animal.dateOfBirth ? animal.dateOfBirth : 'Nepoznat' }}</td>
         <td class="text-right">
         <button class="btn btn-danger btn-sm" @click="remove(animal)">Remove</button>
+          <button class="btn btn-default btn-sm" @click="moveToTop(animal)">Move to top</button>
         </td>
         </tr>
       </tbody>
@@ -62,7 +63,11 @@ export default {
             remove(animal) {
             const index = this.animals.indexOf(animal);
                 this.animals.splice(index, 1);
-            }
+            },
+        moveToTop(animal) {
+        this.remove(animal);
+        this.animals.unshift(animal);
+                }
         }
 };
 </script>
